@@ -19,7 +19,7 @@ from typing import List, Dict, Optional
 import numpy as np
 import tensorflow as tf
 from tensorflow import keras
-from fastapi import FastAPI, UploadFile, File, Form, HTTPException, Query
+from fastapi import FastAPI, UploadFile, File, HTTPException, Query
 from fastapi.responses import HTMLResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -59,6 +59,9 @@ logging.basicConfig(
     format="[%(levelname)s] %(asctime)s - %(message)s",
 )
 log = logging.getLogger("disease-api")
+
+# Turn this to True temporarily if you want to inspect live camera frames
+DEBUG_SAVE = False
 
 # ============================================================
 # APP SETUP
@@ -128,9 +131,30 @@ def get_model_and_labels(crop: str):
 # UTILS
 # ============================================================
 def preprocess(img_bytes: bytes):
+    """
+    Decode image, center-crop to square, then resize to IMG_SIZE.
+    This makes live camera input closer to training distribution.
+    """
+    # Decode
     img = tf.io.decode_image(img_bytes, channels=3)
-    img = tf.image.convert_image_dtype(img, tf.float32)
+    img.set_shape([None, None, 3])  # ensure rank known
+
+    # Center-crop to square (important for webcam frames)
+    shape = tf.shape(img)
+    h = shape[0]
+    w = shape[1]
+    side = tf.minimum(h, w)
+
+    offset_h = (h - side) // 2
+    offset_w = (w - side) // 2
+
+    img = tf.image.crop_to_bounding_box(img, offset_h, offset_w, side, side)
+
+    # Normalize & resize exactly as training
+    img = tf.image.convert_image_dtype(img, tf.float32)  # [0,1]
     img = tf.image.resize(img, IMG_SIZE)
+
+    # Add batch dimension
     return tf.expand_dims(img, 0)
 
 
@@ -743,7 +767,7 @@ async def root():
                     </p>
 
                     <div class="hero-pills">
-                        <div class="pill green">🌱 Rice &nbsp;·&nbsp; Wheat</div>
+                        <div class="pill green">🌱 Rice · Wheat</div>
                         <div class="pill">🧪 CNN model · Grad-CAM explainability</div>
                         <div class="pill">🧭 State-wise cure mapped to India</div>
                     </div>
@@ -819,7 +843,9 @@ async def root():
 
                         <label for="uploadFile">Leaf photo</label>
                         <input type="file" id="uploadFile" accept="image/*" capture="environment" required />
-                        <small class="hint">Use a sharp close-up of a single leaf, avoiding background clutter.</small>
+                        <small class="hint">
+                          Use a sharp close-up of a single leaf, avoiding background clutter.
+                        </small>
 
                         <div class="checkbox-row">
                             <input type="checkbox" id="uploadGradcam" />
@@ -875,6 +901,11 @@ async def root():
                     <button id="captureBtn" type="button" style="display:none;margin-left:0;margin-top:10px;">
                         📸 Capture & predict
                     </button>
+
+                    <small class="hint">
+                      Hold a single infected leaf so it fills most of the frame, keep your hand steady,
+                      then tap “Capture & predict”.
+                    </small>
                 </div>
             </section>
 
@@ -1012,6 +1043,10 @@ async def root():
                 canvas.width = w;
                 canvas.height = h;
                 const ctx = canvas.getContext("2d");
+
+                // small delay so autofocus / exposure can settle
+                await new Promise((resolve) => setTimeout(resolve, 200));
+
                 ctx.drawImage(video, 0, 0, w, h);
 
                 canvas.toBlob(async (blob) => {
@@ -1095,6 +1130,14 @@ async def predict_with_cure_api(
     model, class_names = get_model_and_labels(crop)
 
     data = await file.read()
+
+    # Optional: debug save to inspect live frames vs uploads
+    if DEBUG_SAVE:
+        debug_path = BASE_DIR / "debug_live_frame.jpg"
+        with open(debug_path, "wb") as f:
+            f.write(data)
+        log.info("Saved debug frame to %s", debug_path)
+
     x = preprocess(data)
     preds = model.predict(x, verbose=0)[0]
 
