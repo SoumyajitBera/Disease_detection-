@@ -249,85 +249,637 @@ async def root():
     <html>
     <head>
         <title>AgroAI – Live Disease & Cure</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <style>
-            body {
-                font-family: sans-serif;
-                max-width: 900px;
-                margin: 20px auto;
-                text-align: center;
+            :root {
+                --green-dark: #0b4f32;
+                --green: #198754;
+                --green-soft: #dff6e6;
+                --gold: #f2b705;
+                --bg: #0f172a;
+                --card-bg: #0b2532;
+                --border-soft: #1f2937;
+                --text-main: #f9fafb;
+                --text-muted: #9ca3af;
             }
-            .block {
-                border: 1px solid #ddd;
-                border-radius: 10px;
-                padding: 16px;
+
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                background: radial-gradient(circle at top, #14532d 0, #020617 45%, #020617 100%);
+                color: var(--text-main);
+                -webkit-font-smoothing: antialiased;
+            }
+
+            .page {
+                max-width: 1080px;
+                margin: 0 auto;
+                padding: 20px 16px 40px 16px;
+            }
+
+            .top-bar {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
                 margin-bottom: 20px;
             }
-            #results {
-                margin-top: 20px;
-                text-align: left;
+
+            .brand {
+                display: flex;
+                align-items: center;
+                gap: 10px;
             }
+
+            .brand-logo {
+                width: 40px;
+                height: 40px;
+                border-radius: 12px;
+                background: conic-gradient(from 160deg, #22c55e, #facc15, #22c55e);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #022c22;
+                font-size: 22px;
+                font-weight: 800;
+            }
+
+            .brand-text-title {
+                font-weight: 700;
+                letter-spacing: 0.04em;
+                font-size: 18px;
+                text-transform: uppercase;
+            }
+
+            .brand-text-sub {
+                font-size: 11px;
+                color: var(--text-muted);
+                text-transform: uppercase;
+                letter-spacing: 0.12em;
+            }
+
+            .badge-env {
+                padding: 4px 10px;
+                border-radius: 999px;
+                background: rgba(34, 197, 94, 0.1);
+                border: 1px solid rgba(34, 197, 94, 0.4);
+                font-size: 11px;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+                color: #bbf7d0;
+            }
+
+            .hero {
+                display: grid;
+                grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.5fr);
+                gap: 24px;
+                align-items: stretch;
+                margin-bottom: 24px;
+            }
+
+            @media (max-width: 900px) {
+                .hero {
+                    grid-template-columns: minmax(0, 1fr);
+                }
+            }
+
+            .hero-main {
+                background: radial-gradient(circle at top left, rgba(34,197,94,0.16), transparent 55%),
+                            radial-gradient(circle at bottom right, rgba(234,179,8,0.12), transparent 55%),
+                            linear-gradient(135deg, #020617, #020617);
+                border-radius: 24px;
+                padding: 22px 22px 18px 22px;
+                border: 1px solid rgba(148,163,184,0.25);
+                box-shadow: 0 18px 40px rgba(15,23,42,0.75);
+            }
+
+            .hero-tagline {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                padding: 4px 10px;
+                border-radius: 999px;
+                background: rgba(15,23,42,0.7);
+                border: 1px solid rgba(148,163,184,0.5);
+                font-size: 11px;
+                text-transform: uppercase;
+                letter-spacing: 0.12em;
+                color: #e5e7eb;
+            }
+
+            .hero-tagline span.dot {
+                width: 7px;
+                height: 7px;
+                border-radius: 999px;
+                background: #22c55e;
+                box-shadow: 0 0 0 5px rgba(34,197,94,0.4);
+            }
+
+            .hero-title {
+                margin-top: 14px;
+                font-size: 28px;
+                font-weight: 700;
+                line-height: 1.25;
+            }
+
+            .hero-title span-em {
+                color: #bbf7d0;
+            }
+
+            .hero-subtitle {
+                margin-top: 10px;
+                font-size: 14px;
+                color: var(--text-muted);
+            }
+
+            .hero-pills {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                margin-top: 14px;
+            }
+
+            .pill {
+                padding: 6px 10px;
+                border-radius: 999px;
+                border: 1px solid rgba(148,163,184,0.5);
+                font-size: 11px;
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                background: rgba(15,23,42,0.8);
+            }
+
+            .pill.green {
+                border-color: rgba(34,197,94,0.6);
+                background: radial-gradient(circle at top left, rgba(34,197,94,0.16), rgba(15,23,42,0.9));
+            }
+
+            .hero-stats {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 10px;
+                margin-top: 18px;
+            }
+
+            @media (max-width: 600px) {
+                .hero-stats {
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                }
+            }
+
+            .stat-card {
+                padding: 10px 10px 9px 10px;
+                border-radius: 14px;
+                background: rgba(15,23,42,0.95);
+                border: 1px solid rgba(148,163,184,0.25);
+                font-size: 11px;
+                color: var(--text-muted);
+            }
+
+            .stat-value {
+                font-size: 16px;
+                font-weight: 600;
+                color: #e5e7eb;
+            }
+
+            .hero-note {
+                margin-top: 12px;
+                font-size: 11px;
+                color: #9ca3af;
+            }
+
+            .hero-secondary {
+                border-radius: 24px;
+                padding: 16px 16px 14px 16px;
+                background: linear-gradient(145deg, #052e16, #0b1120);
+                border: 1px solid rgba(34,197,94,0.5);
+                box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+            }
+
+            .mini-heading {
+                font-size: 12px;
+                text-transform: uppercase;
+                letter-spacing: 0.16em;
+                color: #bbf7d0;
+            }
+
+            .hero-secondary-title {
+                margin-top: 6px;
+                font-size: 15px;
+                font-weight: 600;
+            }
+
+            .hero-secondary-sub {
+                margin-top: 8px;
+                font-size: 12px;
+                color: #d1fae5;
+            }
+
+            .hero-secondary-list {
+                margin-top: 10px;
+                padding-left: 16px;
+                font-size: 11px;
+                color: #a7f3d0;
+            }
+
+            .mode-grid {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 16px;
+                margin-top: 10px;
+            }
+
+            @media (max-width: 900px) {
+                .mode-grid {
+                    grid-template-columns: minmax(0, 1fr);
+                }
+            }
+
+            .block {
+                border-radius: 18px;
+                padding: 16px 14px 14px 14px;
+                background: linear-gradient(160deg, rgba(15,23,42,0.96), rgba(15,23,42,0.9));
+                border: 1px solid rgba(55,65,81,0.7);
+                box-shadow: 0 16px 35px rgba(15,23,42,0.75);
+            }
+
+            .block-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 6px;
+            }
+
+            .block-title {
+                font-size: 15px;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+            }
+
+            .block-title span.icon {
+                font-size: 17px;
+            }
+
+            .block-subtitle {
+                font-size: 11px;
+                color: var(--text-muted);
+                margin-bottom: 10px;
+            }
+
+            label {
+                font-size: 11px;
+                color: var(--text-muted);
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+            }
+
+            select, input[type="file"] {
+                margin-top: 4px;
+                padding: 7px 8px;
+                border-radius: 10px;
+                border: 1px solid rgba(75,85,99,0.9);
+                background: rgba(15,23,42,0.9);
+                color: var(--text-main);
+                font-size: 12px;
+                width: 100%;
+            }
+
+            input[type="file"] {
+                padding: 8px;
+                font-size: 12px;
+            }
+
+            .field-row {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px;
+                margin-bottom: 10px;
+            }
+
+            @media (max-width: 600px) {
+                .field-row {
+                    grid-template-columns: minmax(0, 1fr);
+                }
+            }
+
+            .checkbox-row {
+                margin-top: 8px;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                font-size: 12px;
+                color: var(--text-muted);
+            }
+
+            .checkbox-row input[type="checkbox"] {
+                width: 14px;
+                height: 14px;
+            }
+
+            button {
+                padding: 8px 14px;
+                margin-top: 10px;
+                border-radius: 999px;
+                border: none;
+                background: linear-gradient(135deg, #22c55e, #22c55e);
+                color: #022c22;
+                font-weight: 600;
+                font-size: 13px;
+                cursor: pointer;
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                box-shadow: 0 10px 25px rgba(22,163,74,0.55);
+                transition: transform 0.08s ease, box-shadow 0.08s ease, filter 0.08s ease;
+            }
+
+            button:hover {
+                transform: translateY(-1px);
+                filter: brightness(1.05);
+                box-shadow: 0 14px 30px rgba(22,163,74,0.65);
+            }
+
+            button:active {
+                transform: translateY(0);
+                box-shadow: 0 8px 18px rgba(22,163,74,0.55);
+            }
+
+            button.secondary {
+                background: transparent;
+                border: 1px solid rgba(148,163,184,0.7);
+                color: #e5e7eb;
+                box-shadow: none;
+            }
+
+            button.secondary:hover {
+                background: rgba(15,23,42,0.8);
+                box-shadow: 0 8px 20px rgba(15,23,42,0.8);
+            }
+
             video {
                 max-width: 100%;
-                border: 1px solid #ccc;
-                border-radius: 8px;
+                border-radius: 14px;
+                border: 1px solid rgba(55,65,81,0.9);
+                margin-top: 10px;
+                background: #020617;
             }
-            button {
-                padding: 6px 16px;
-                margin-top: 8px;
+
+            #results {
+                margin-top: 22px;
+            }
+
+            #results.block {
+                background: radial-gradient(circle at top left, rgba(34,197,94,0.12), rgba(15,23,42,0.96));
+                border: 1px solid rgba(52,211,153,0.7);
+            }
+
+            #results h2 {
+                margin-top: 0;
+            }
+
+            .result-header {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: baseline;
+                gap: 8px;
+                margin-bottom: 6px;
+            }
+
+            .result-pill {
+                padding: 3px 10px;
+                border-radius: 999px;
+                background: rgba(15,23,42,0.9);
+                border: 1px solid rgba(16,185,129,0.8);
+                font-size: 11px;
+            }
+
+            .result-meta {
+                font-size: 12px;
+                color: var(--text-muted);
+                margin-bottom: 8px;
+            }
+
+            .result-section-title {
+                margin-top: 10px;
+                font-size: 13px;
+                font-weight: 600;
+            }
+
+            .result-grid {
+                display: grid;
+                grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+                gap: 18px;
+                margin-top: 6px;
+            }
+
+            @media (max-width: 900px) {
+                .result-grid {
+                    grid-template-columns: minmax(0, 1fr);
+                }
+            }
+
+            .cure-text p {
+                font-size: 12px;
+                margin: 4px 0;
+            }
+
+            .cure-text b {
+                color: #d1fae5;
+            }
+
+            .gradcam-wrapper img {
+                max-width: 100%;
+                border-radius: 14px;
+                border: 1px solid rgba(148,163,184,0.7);
+                background: #020617;
+            }
+
+            .error-text {
+                color: #fecaca;
+                font-size: 13px;
+            }
+
+            small.hint {
+                display: block;
+                margin-top: 4px;
+                font-size: 11px;
+                color: var(--text-muted);
             }
         </style>
     </head>
     <body>
-        <h1>🌾 AgroAI – Disease Detection + Cure</h1>
-        <p>Select crop and state, then either upload an image or use live camera. The system will detect the disease and show the cure.</p>
+        <div class="page">
+            <header class="top-bar">
+                <div class="brand">
+                    <div class="brand-logo">🌾</div>
+                    <div>
+                        <div class="brand-text-title">AgroAI</div>
+                        <div class="brand-text-sub">Leaf disease & state-wise cure</div>
+                    </div>
+                </div>
+                <div class="badge-env">Field Pilot · India</div>
+            </header>
 
-        <div class="block">
-            <h2>1️⃣ Upload Image</h2>
-            <form id="uploadForm">
-                <label>Crop:</label>
-                <select id="uploadCrop" required>
-                    <option value="rice">Rice</option>
-                    <option value="wheat">Wheat</option>
-                </select>
-                &nbsp;&nbsp;
-                <label>State:</label>
-                <select id="uploadState" required>
-                    __STATE_OPTIONS__
-                </select>
-                <br><br>
-                <input type="file" id="uploadFile" accept="image/*" capture="environment" required />
-                <br><br>
-                <label><input type="checkbox" id="uploadGradcam" /> With Grad-CAM</label>
-                <br><br>
-                <button type="submit">Predict Disease & Cure</button>
-            </form>
+            <section class="hero">
+                <div class="hero-main">
+                    <div class="hero-tagline">
+                        <span class="dot"></span>
+                        <span>Real-time crop health assistant</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Scan a <span-em>rice</span-em> or <span-em>wheat</span-em> leaf.
+                        Get instant disease <span-em>diagnosis & cure</span-em>
+                        for your state.
+                    </h1>
+                    <p class="hero-subtitle">
+                        Farmers and agronomists can upload a leaf photo or use live camera to detect disease
+                        and view state-specific management practices – cultural, chemical and doses.
+                    </p>
+
+                    <div class="hero-pills">
+                        <div class="pill green">🌱 Rice &nbsp;·&nbsp; Wheat</div>
+                        <div class="pill">🧪 CNN model · Grad-CAM explainability</div>
+                        <div class="pill">🧭 State-wise cure mapped to India</div>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <div class="stat-label">Supported crops</div>
+                            <div class="stat-value">2</div>
+                            <div class="stat-foot">Rice, Wheat</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Disease classes</div>
+                            <div class="stat-value">Multiple</div>
+                            <div class="stat-foot">Model-based detection</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Cure lookup</div>
+                            <div class="stat-value">State-wise</div>
+                            <div class="stat-foot">CSV-backed knowledge</div>
+                        </div>
+                    </div>
+
+                    <p class="hero-note">
+                        Tip: For best results, capture a clear close-up of the infected portion of the leaf in daylight.
+                    </p>
+                </div>
+
+                <aside class="hero-secondary">
+                    <div class="mini-heading">how it works</div>
+                    <div class="hero-secondary-title">From farm camera to cure card</div>
+                    <p class="hero-secondary-sub">
+                        1. Choose crop & state<br/>
+                        2. Upload or capture a leaf photo<br/>
+                        3. AgroAI predicts disease & fetches the cure for your state
+                    </p>
+                    <ul class="hero-secondary-list">
+                        <li>No manual typing of disease names</li>
+                        <li>Visual explanation with Grad-CAM (optional)</li>
+                        <li>Configurable CSV for agronomy teams</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section class="mode-grid">
+                <!-- Upload Image Block -->
+                <div class="block">
+                    <div class="block-header">
+                        <div class="block-title">
+                            <span class="icon">📤</span>
+                            <span>Upload leaf image</span>
+                        </div>
+                    </div>
+                    <div class="block-subtitle">
+                        For farmers sending photos via WhatsApp, extension agents, or any stored leaf images.
+                    </div>
+
+                    <form id="uploadForm">
+                        <div class="field-row">
+                            <div>
+                                <label for="uploadCrop">Crop</label>
+                                <select id="uploadCrop" required>
+                                    <option value="rice">Rice</option>
+                                    <option value="wheat">Wheat</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="uploadState">State</label>
+                                <select id="uploadState" required>
+                                    __STATE_OPTIONS__
+                                </select>
+                            </div>
+                        </div>
+
+                        <label for="uploadFile">Leaf photo</label>
+                        <input type="file" id="uploadFile" accept="image/*" capture="environment" required />
+                        <small class="hint">Use a sharp close-up of a single leaf, avoiding background clutter.</small>
+
+                        <div class="checkbox-row">
+                            <input type="checkbox" id="uploadGradcam" />
+                            <span>Show Grad-CAM (how the model “sees” the disease)</span>
+                        </div>
+
+                        <button type="submit">
+                            🔍 Predict disease & show cure
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Live Camera Block -->
+                <div class="block">
+                    <div class="block-header">
+                        <div class="block-title">
+                            <span class="icon">📷</span>
+                            <span>Live camera scan</span>
+                        </div>
+                    </div>
+                    <div class="block-subtitle">
+                        Use directly on a smartphone or laptop webcam standing in the field.
+                    </div>
+
+                    <div class="field-row">
+                        <div>
+                            <label for="liveCrop">Crop</label>
+                            <select id="liveCrop" required>
+                                <option value="rice">Rice</option>
+                                <option value="wheat">Wheat</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="liveState">State</label>
+                            <select id="liveState" required>
+                                __STATE_OPTIONS__
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="checkbox-row">
+                        <input type="checkbox" id="liveGradcam" />
+                        <span>Show Grad-CAM overlay</span>
+                    </div>
+
+                    <button id="startCameraBtn" type="button" class="secondary">
+                        ▶ Start camera
+                    </button>
+
+                    <video id="video" autoplay playsinline style="display:none;"></video>
+                    <canvas id="canvas" style="display:none;"></canvas>
+
+                    <button id="captureBtn" type="button" style="display:none;margin-left:0;margin-top:10px;">
+                        📸 Capture & predict
+                    </button>
+                </div>
+            </section>
+
+            <section id="results" class="block" style="display:none;"></section>
         </div>
-
-        <div class="block">
-            <h2>2️⃣ Live Camera</h2>
-            <p>Use this on a laptop with webcam or a phone browser.</p>
-            <label>Crop:</label>
-            <select id="liveCrop" required>
-                <option value="rice">Rice</option>
-                <option value="wheat">Wheat</option>
-            </select>
-            &nbsp;&nbsp;
-            <label>State:</label>
-            <select id="liveState" required>
-                __STATE_OPTIONS__
-            </select>
-            <br><br>
-            <button id="startCameraBtn" type="button">Start Camera</button>
-            <br><br>
-            <video id="video" autoplay playsinline style="display:none;"></video>
-            <canvas id="canvas" style="display:none;"></canvas>
-            <br>
-            <label><input type="checkbox" id="liveGradcam" /> With Grad-CAM</label>
-            <br>
-            <button id="captureBtn" type="button" style="display:none;">Capture & Predict</button>
-        </div>
-
-        <div id="results" class="block" style="display:none;"></div>
 
         <script>
             const resultsDiv = document.getElementById("results");
@@ -335,37 +887,45 @@ async def root():
             function renderResult(data) {
                 if (!data) {
                     resultsDiv.style.display = "block";
-                    resultsDiv.innerHTML = "<p style='color:red;'>No response.</p>";
+                    resultsDiv.innerHTML = "<p class='error-text'>No response.</p>";
                     return;
                 }
 
                 let cureHtml = "";
                 if (data.cure) {
-                    cureHtml += "<h3>Cure Recommendation – " + data.crop.toUpperCase() +
-                                " / " + data.label + " / " + data.state + "</h3>";
+                    cureHtml += "<div class='result-section-title'>Cure recommendation – "
+                             + data.crop.toUpperCase() + " · " + data.label + " · " + data.state + "</div>";
+                    cureHtml += "<div class='cure-text'>";
                     cureHtml += "<p><b>Cultural management:</b> " + data.cure.cultural_management + "</p>";
                     cureHtml += "<p><b>Chemical management:</b> " + data.cure.chemical_management + "</p>";
                     cureHtml += "<p><b>Dose:</b> " + data.cure.dose + "</p>";
                     cureHtml += "<p><b>Season:</b> " + data.cure.season + "</p>";
                     cureHtml += "<p><b>Notes:</b> " + data.cure.notes + "</p>";
+                    cureHtml += "</div>";
                 } else {
-                    cureHtml += "<p style='color:red;'>No cure record found for this crop/disease/state combination.</p>";
+                    cureHtml += "<p class='error-text'>No cure record found for this crop/disease/state combination.</p>";
                 }
 
                 let gradcamHtml = "";
                 if (data.gradcam_b64) {
-                    gradcamHtml += "<h4>Grad-CAM</h4>";
-                    gradcamHtml += "<img src='data:image/jpeg;base64," + data.gradcam_b64 +
-                                   "' style='max-width:100%;border:1px solid #ccc;border-radius:6px;'/>";
+                    gradcamHtml += "<div class='result-section-title'>Grad-CAM view</div>";
+                    gradcamHtml += "<div class='gradcam-wrapper'><img src='data:image/jpeg;base64,"
+                                + data.gradcam_b64 + "' /></div>";
                 }
 
                 let html = "";
-                html += "<h2>Prediction</h2>";
-                html += "<p><b>Crop:</b> " + data.crop + "</p>";
-                html += "<p><b>Disease:</b> " + data.label + "</p>";
-                html += "<p><b>Confidence:</b> " + (data.confidence * 100).toFixed(2) + "%</p>";
-                html += cureHtml;
-                html += gradcamHtml;
+                html += "<div class='result-header'>";
+                html += "<h2>Diagnosis report</h2>";
+                html += "<span class='result-pill'>Confidence: " + (data.confidence * 100).toFixed(2) + "%</span>";
+                html += "</div>";
+                html += "<div class='result-meta'>";
+                html += "Crop: <b>" + data.crop + "</b> · Disease: <b>" + data.label + "</b> · State: <b>" + data.state + "</b>";
+                html += "</div>";
+
+                html += "<div class='result-grid'>";
+                html += "<div>" + cureHtml + "</div>";
+                html += "<div>" + gradcamHtml + "</div>";
+                html += "</div>";
 
                 resultsDiv.style.display = "block";
                 resultsDiv.innerHTML = html;
@@ -374,10 +934,10 @@ async def root():
             async function callPredictWithCure(file, crop, state, withGradcam) {
                 const formData = new FormData();
                 formData.append("file", file, "leaf.jpg");
-                const url = "/predict_with_cure?crop=" +
-                            encodeURIComponent(crop) +
-                            "&state=" + encodeURIComponent(state) +
-                            "&with_gradcam=" + (withGradcam ? "true" : "false");
+                const url = "/predict_with_cure?crop="
+                            + encodeURIComponent(crop)
+                            + "&state=" + encodeURIComponent(state)
+                            + "&with_gradcam=" + (withGradcam ? "true" : "false");
 
                 const resp = await fetch(url, {
                     method: "POST",
@@ -412,7 +972,7 @@ async def root():
                 } catch (err) {
                     console.error(err);
                     resultsDiv.style.display = "block";
-                    resultsDiv.innerHTML = "<p style='color:red;'>Error: " + err.message + "</p>";
+                    resultsDiv.innerHTML = "<p class='error-text'>Error: " + err.message + "</p>";
                 }
             });
 
@@ -428,7 +988,7 @@ async def root():
                     stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } });
                     video.srcObject = stream;
                     video.style.display = "block";
-                    captureBtn.style.display = "inline-block";
+                    captureBtn.style.display = "inline-flex";
                 } catch (err) {
                     alert("Could not access camera: " + err.message);
                 }
@@ -465,7 +1025,7 @@ async def root():
                     } catch (err) {
                         console.error(err);
                         resultsDiv.style.display = "block";
-                        resultsDiv.innerHTML = "<p style='color:red;'>Error: " + err.message + "</p>";
+                        resultsDiv.innerHTML = "<p class='error-text'>Error: " + err.message + "</p>";
                     }
                 }, "image/jpeg", 0.9);
             });
