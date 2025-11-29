@@ -1,0 +1,169 @@
+Crop,State,Disease,Pathogen,Symptoms,Cultural_Management,Chemical_Management,Dose,Season
+Wheat,Punjab,BlackPoint,Cochliobolus sativus,Black discoloration at embryo end of grains,"Use clean seed, proper drying, avoid late irrigation",Carbendazim 50% WP,2 g/kg seed,Rabi
+Wheat,Punjab,FusariumFootRot,Fusarium spp.,"Brown foot rot, stunted plant growth","Crop rotation, deep ploughing",Thiram / Carboxin,3 g/kg seed,Rabi
+Wheat,Punjab,HealthyLeaf,—,No visible symptoms (healthy leaf sample),—,—,—,All
+Wheat,Punjab,LeafBlight,Alternaria triticina,Brown necrotic patches on leaves,"Balanced fertilizer, avoid moisture stress",Mancozeb 75% WP,2 g/L,Rabi
+Wheat,Punjab,WheatBlast,Magnaporthe oryzae pathotype Triticum,"Grey lesions, spike bleaching, shriveled grains","Burn infected residues, avoid late sowing",Tebuconazole / Tricyclazole,1 ml/L,Rabi
+Rice,Punjab,Bacterialblight,Xanthomonas oryzae pv. oryzae,Yellowing/drying from leaf tip downward,"Drain excess water, use resistant varieties",Copper oxychloride,2.5 g/L,Kharif
+Rice,Punjab,Brownspot,Bipolaris oryzae,Brown circular lesions on leaves,"Balanced NPK, seed treatment",Mancozeb / Propiconazole,2 g/L,Kharif
+Rice,Punjab,Leafsmut,Entyloma oryzae,Black linear sori on leaves,"Remove infected debris, avoid dense planting",Carbendazim 50% WP,1 g/L,Kharif
+Wheat,Haryana,BlackPoint,Cochliobolus sativus,Black discoloration at embryo end of grains,"Use clean seed, proper drying, avoid late irrigation",Carbendazim 50% WP,2 g/kg seed,Rabi
+Wheat,Haryana,FusariumFootRot,Fusarium spp.,"Brown foot rot, stunted plant growth","Crop rotation, deep ploughing",Thiram / Carboxin,3 g/kg seed,Rabi
+Wheat,Haryana,HealthyLeaf,—,No visible symptoms (healthy leaf sample),—,—,—,All
+Wheat,Haryana,LeafBlight,Alternaria triticina,Brown necrotic patches on leaves,"Balanced fertilizer, avoid moisture stress",Mancozeb 75% WP,2 g/L,Rabi
+Wheat,Haryana,WheatBlast,Magnaporthe oryzae pathotype Triticum,"Grey lesions, spike bleaching, shriveled grains","Burn infected residues, avoid late sowing",Tebuconazole / Tricyclazole,1 ml/L,Rabi
+Rice,Haryana,Bacterialblight,Xanthomonas oryzae pv. oryzae,Yellowing/drying from leaf tip downward,"Drain excess water, use resistant varieties",Copper oxychloride,2.5 g/L,Kharif
+Rice,Haryana,Brownspot,Bipolaris oryzae,Brown circular lesions on leaves,"Balanced NPK, seed treatment",Mancozeb / Propiconazole,2 g/L,Kharif
+Rice,Haryana,Leafsmut,Entyloma oryzae,Black linear sori on leaves,"Remove infected debris, avoid dense planting",Carbendazim 50% WP,1 g/L,Kharif
+Wheat,Uttar Pradesh,BlackPoint,Cochliobolus sativus,Black discoloration at embryo end of grains,"Use clean seed, proper drying, avoid late irrigation",Carbendazim 50% WP,2 g/kg seed,Rabi
+Wheat,Uttar Pradesh,FusariumFootRot,Fusarium spp.,"Brown foot rot, stunted plant growth","Crop rotation, deep ploughing",Thiram / Carboxin,3 g/kg seed,Rabi
+Wheat,Uttar Pradesh,HealthyLeaf,—,No visible symptoms (healthy leaf sample),—,—,—,All
+Wheat,Uttar Pradesh,LeafBlight,Alternaria triticina,Brown necrotic patches on leaves,"Balanced fertilizer, avoid moisture stress",Mancozeb 75% WP,2 g/L,Rabi
+Wheat,Uttar Pradesh,WheatBlast,Magnaporthe oryzae pathotype Triticum,"Grey lesions, spike bleaching, shriveled grains","Burn infected residues, avoid late sowing",Tebuconazole / Tricyclazole,1 ml/L,Rabi
+Rice,Uttar Pradesh,Bacterialblight,Xanthomonas oryzae pv. oryzae,Yellowing/drying from leaf tip downward,"Drain excess water, use resistant varieties",Copper oxychloride,2.5 g/L,Kharif
+Rice,Uttar Pradesh,Brownspot,Bipolaris oryzae,Brown circular lesions on leaves,"Balanced NPK, seed treatment",Mancozeb / Propiconazole,2 g/L,Kharif
+Rice,Uttar Pradesh,Leafsmut,Entyloma oryzae,Black linear sori on leaves,"Remove infected debris, avoid dense planting",Carbendazim 50% WP,1 g/L,Kharif
+Wheat,Bihar,BlackPoint,Cochliobolus sativus,Black discoloration at embryo end of grains,"Use clean seed, proper drying, avoid late irrigation",Carbendazim 50% WP,2 g/kg seed,Rabi
+Wheat,Bihar,FusariumFootRot,Fusarium spp.,"Brown foot rot, stunted plant growth","Crop rotation, deep ploughing",Thiram / Carboxin,3 g/kg seed,Rabi
+Wheat,Bihar,HealthyLeaf,—,No visible symptoms (healthy leaf sample),—,—,—,All
+Wheat,Bihar,LeafBlight,Alternaria triticina,Brown necrotic patches on leaves,"Balanced fertilizer, avoid moisture stress",Mancozeb 75% WP,2 g/L,Rabi
+Wheat,Bihar,WheatBlast,Magnaporthe oryzae pathotype Triticum,"Grey lesions, spike bleaching, shriveled grains","Burn infected residues, avoid late sowing",Tebuconazole / Tricyclazole,1 ml/L,Rabi
+Rice,Bihar,Bacterialblight,Xanthomonas oryzae pv. oryzae,Yellowing/drying from leaf tip downward,"Drain excess water, use resistant varieties",Copper oxychloride,2.5 g/L,Kharif
+Rice,Bihar,Brownspot,Bipolaris oryzae,Brown circular lesions on leaves,"Balanced NPK, seed treatment",Mancozeb / Propiconazole,2 g/L,Kharif
+Rice,Bihar,Leafsmut,Entyloma oryzae,Black linear sori on leaves,"Remove infected debris, avoid dense planting",Carbendazim 50% WP,1 g/L,Kharif
+Wheat,Rajasthan,BlackPoint,Cochliobolus sativus,Black discoloration at embryo end of grains,"Use clean seed, proper drying, avoid late irrigation",Carbendazim 50% WP,2 g/kg seed,Rabi
+Wheat,Rajasthan,FusariumFootRot,Fusarium spp.,"Brown foot rot, stunted plant growth","Crop rotation, deep ploughing",Thiram / Carboxin,3 g/kg seed,Rabi
+Wheat,Rajasthan,HealthyLeaf,—,No visible symptoms (healthy leaf sample),—,—,—,All
+Wheat,Rajasthan,LeafBlight,Alternaria triticina,Brown necrotic patches on leaves,"Balanced fertilizer, avoid moisture stress",Mancozeb 75% WP,2 g/L,Rabi
+Wheat,Rajasthan,WheatBlast,Magnaporthe oryzae pathotype Triticum,"Grey lesions, spike bleaching, shriveled grains","Burn infected residues, avoid late sowing",Tebuconazole / Tricyclazole,1 ml/L,Rabi
+Rice,Rajasthan,Bacterialblight,Xanthomonas oryzae pv. oryzae,Yellowing/drying from leaf tip downward,"Drain excess water, use resistant varieties",Copper oxychloride,2.5 g/L,Kharif
+Rice,Rajasthan,Brownspot,Bipolaris oryzae,Brown circular lesions on leaves,"Balanced NPK, seed treatment",Mancozeb / Propiconazole,2 g/L,Kharif
+Rice,Rajasthan,Leafsmut,Entyloma oryzae,Black linear sori on leaves,"Remove infected debris, avoid dense planting",Carbendazim 50% WP,1 g/L,Kharif
+Wheat,Madhya Pradesh,BlackPoint,Cochliobolus sativus,Black discoloration at embryo end of grains,"Use clean seed, proper drying, avoid late irrigation",Carbendazim 50% WP,2 g/kg seed,Rabi
+Wheat,Madhya Pradesh,FusariumFootRot,Fusarium spp.,"Brown foot rot, stunted plant growth","Crop rotation, deep ploughing",Thiram / Carboxin,3 g/kg seed,Rabi
+Wheat,Madhya Pradesh,HealthyLeaf,—,No visible symptoms (healthy leaf sample),—,—,—,All
+Wheat,Madhya Pradesh,LeafBlight,Alternaria triticina,Brown necrotic patches on leaves,"Balanced fertilizer, avoid moisture stress",Mancozeb 75% WP,2 g/L,Rabi
+Wheat,Madhya Pradesh,WheatBlast,Magnaporthe oryzae pathotype Triticum,"Grey lesions, spike bleaching, shriveled grains","Burn infected residues, avoid late sowing",Tebuconazole / Tricyclazole,1 ml/L,Rabi
+Rice,Madhya Pradesh,Bacterialblight,Xanthomonas oryzae pv. oryzae,Yellowing/drying from leaf tip downward,"Drain excess water, use resistant varieties",Copper oxychloride,2.5 g/L,Kharif
+Rice,Madhya Pradesh,Brownspot,Bipolaris oryzae,Brown circular lesions on leaves,"Balanced NPK, seed treatment",Mancozeb / Propiconazole,2 g/L,Kharif
+Rice,Madhya Pradesh,Leafsmut,Entyloma oryzae,Black linear sori on leaves,"Remove infected debris, avoid dense planting",Carbendazim 50% WP,1 g/L,Kharif
+Wheat,Gujarat,BlackPoint,Cochliobolus sativus,Black discoloration at embryo end of grains,"Use clean seed, proper drying, avoid late irrigation",Carbendazim 50% WP,2 g/kg seed,Rabi
+Wheat,Gujarat,FusariumFootRot,Fusarium spp.,"Brown foot rot, stunted plant growth","Crop rotation, deep ploughing",Thiram / Carboxin,3 g/kg seed,Rabi
+Wheat,Gujarat,HealthyLeaf,—,No visible symptoms (healthy leaf sample),—,—,—,All
+Wheat,Gujarat,LeafBlight,Alternaria triticina,Brown necrotic patches on leaves,"Balanced fertilizer, avoid moisture stress",Mancozeb 75% WP,2 g/L,Rabi
+Wheat,Gujarat,WheatBlast,Magnaporthe oryzae pathotype Triticum,"Grey lesions, spike bleaching, shriveled grains","Burn infected residues, avoid late sowing",Tebuconazole / Tricyclazole,1 ml/L,Rabi
+Rice,Gujarat,Bacterialblight,Xanthomonas oryzae pv. oryzae,Yellowing/drying from leaf tip downward,"Drain excess water, use resistant varieties",Copper oxychloride,2.5 g/L,Kharif
+Rice,Gujarat,Brownspot,Bipolaris oryzae,Brown circular lesions on leaves,"Balanced NPK, seed treatment",Mancozeb / Propiconazole,2 g/L,Kharif
+Rice,Gujarat,Leafsmut,Entyloma oryzae,Black linear sori on leaves,"Remove infected debris, avoid dense planting",Carbendazim 50% WP,1 g/L,Kharif
+Wheat,Maharashtra,BlackPoint,Cochliobolus sativus,Black discoloration at embryo end of grains,"Use clean seed, proper drying, avoid late irrigation",Carbendazim 50% WP,2 g/kg seed,Rabi
+Wheat,Maharashtra,FusariumFootRot,Fusarium spp.,"Brown foot rot, stunted plant growth","Crop rotation, deep ploughing",Thiram / Carboxin,3 g/kg seed,Rabi
+Wheat,Maharashtra,HealthyLeaf,—,No visible symptoms (healthy leaf sample),—,—,—,All
+Wheat,Maharashtra,LeafBlight,Alternaria triticina,Brown necrotic patches on leaves,"Balanced fertilizer, avoid moisture stress",Mancozeb 75% WP,2 g/L,Rabi
+Wheat,Maharashtra,WheatBlast,Magnaporthe oryzae pathotype Triticum,"Grey lesions, spike bleaching, shriveled grains","Burn infected residues, avoid late sowing",Tebuconazole / Tricyclazole,1 ml/L,Rabi
+Rice,Maharashtra,Bacterialblight,Xanthomonas oryzae pv. oryzae,Yellowing/drying from leaf tip downward,"Drain excess water, use resistant varieties",Copper oxychloride,2.5 g/L,Kharif
+Rice,Maharashtra,Brownspot,Bipolaris oryzae,Brown circular lesions on leaves,"Balanced NPK, seed treatment",Mancozeb / Propiconazole,2 g/L,Kharif
+Rice,Maharashtra,Leafsmut,Entyloma oryzae,Black linear sori on leaves,"Remove infected debris, avoid dense planting",Carbendazim 50% WP,1 g/L,Kharif
+Wheat,West Bengal,BlackPoint,Cochliobolus sativus,Black discoloration at embryo end of grains,"Use clean seed, proper drying, avoid late irrigation",Carbendazim 50% WP,2 g/kg seed,Rabi
+Wheat,West Bengal,FusariumFootRot,Fusarium spp.,"Brown foot rot, stunted plant growth","Crop rotation, deep ploughing",Thiram / Carboxin,3 g/kg seed,Rabi
+Wheat,West Bengal,HealthyLeaf,—,No visible symptoms (healthy leaf sample),—,—,—,All
+Wheat,West Bengal,LeafBlight,Alternaria triticina,Brown necrotic patches on leaves,"Balanced fertilizer, avoid moisture stress",Mancozeb 75% WP,2 g/L,Rabi
+Wheat,West Bengal,WheatBlast,Magnaporthe oryzae pathotype Triticum,"Grey lesions, spike bleaching, shriveled grains","Burn infected residues, avoid late sowing",Tebuconazole / Tricyclazole,1 ml/L,Rabi
+Rice,West Bengal,Bacterialblight,Xanthomonas oryzae pv. oryzae,Yellowing/drying from leaf tip downward,"Drain excess water, use resistant varieties",Copper oxychloride,2.5 g/L,Kharif
+Rice,West Bengal,Brownspot,Bipolaris oryzae,Brown circular lesions on leaves,"Balanced NPK, seed treatment",Mancozeb / Propiconazole,2 g/L,Kharif
+Rice,West Bengal,Leafsmut,Entyloma oryzae,Black linear sori on leaves,"Remove infected debris, avoid dense planting",Carbendazim 50% WP,1 g/L,Kharif
+Wheat,Odisha,BlackPoint,Cochliobolus sativus,Black discoloration at embryo end of grains,"Use clean seed, proper drying, avoid late irrigation",Carbendazim 50% WP,2 g/kg seed,Rabi
+Wheat,Odisha,FusariumFootRot,Fusarium spp.,"Brown foot rot, stunted plant growth","Crop rotation, deep ploughing",Thiram / Carboxin,3 g/kg seed,Rabi
+Wheat,Odisha,HealthyLeaf,—,No visible symptoms (healthy leaf sample),—,—,—,All
+Wheat,Odisha,LeafBlight,Alternaria triticina,Brown necrotic patches on leaves,"Balanced fertilizer, avoid moisture stress",Mancozeb 75% WP,2 g/L,Rabi
+Wheat,Odisha,WheatBlast,Magnaporthe oryzae pathotype Triticum,"Grey lesions, spike bleaching, shriveled grains","Burn infected residues, avoid late sowing",Tebuconazole / Tricyclazole,1 ml/L,Rabi
+Rice,Odisha,Bacterialblight,Xanthomonas oryzae pv. oryzae,Yellowing/drying from leaf tip downward,"Drain excess water, use resistant varieties",Copper oxychloride,2.5 g/L,Kharif
+Rice,Odisha,Brownspot,Bipolaris oryzae,Brown circular lesions on leaves,"Balanced NPK, seed treatment",Mancozeb / Propiconazole,2 g/L,Kharif
+Rice,Odisha,Leafsmut,Entyloma oryzae,Black linear sori on leaves,"Remove infected debris, avoid dense planting",Carbendazim 50% WP,1 g/L,Kharif
+Wheat,Assam,BlackPoint,Cochliobolus sativus,Black discoloration at embryo end of grains,"Use clean seed, proper drying, avoid late irrigation",Carbendazim 50% WP,2 g/kg seed,Rabi
+Wheat,Assam,FusariumFootRot,Fusarium spp.,"Brown foot rot, stunted plant growth","Crop rotation, deep ploughing",Thiram / Carboxin,3 g/kg seed,Rabi
+Wheat,Assam,HealthyLeaf,—,No visible symptoms (healthy leaf sample),—,—,—,All
+Wheat,Assam,LeafBlight,Alternaria triticina,Brown necrotic patches on leaves,"Balanced fertilizer, avoid moisture stress",Mancozeb 75% WP,2 g/L,Rabi
+Wheat,Assam,WheatBlast,Magnaporthe oryzae pathotype Triticum,"Grey lesions, spike bleaching, shriveled grains","Burn infected residues, avoid late sowing",Tebuconazole / Tricyclazole,1 ml/L,Rabi
+Rice,Assam,Bacterialblight,Xanthomonas oryzae pv. oryzae,Yellowing/drying from leaf tip downward,"Drain excess water, use resistant varieties",Copper oxychloride,2.5 g/L,Kharif
+Rice,Assam,Brownspot,Bipolaris oryzae,Brown circular lesions on leaves,"Balanced NPK, seed treatment",Mancozeb / Propiconazole,2 g/L,Kharif
+Rice,Assam,Leafsmut,Entyloma oryzae,Black linear sori on leaves,"Remove infected debris, avoid dense planting",Carbendazim 50% WP,1 g/L,Kharif
+Wheat,Jharkhand,BlackPoint,Cochliobolus sativus,Black discoloration at embryo end of grains,"Use clean seed, proper drying, avoid late irrigation",Carbendazim 50% WP,2 g/kg seed,Rabi
+Wheat,Jharkhand,FusariumFootRot,Fusarium spp.,"Brown foot rot, stunted plant growth","Crop rotation, deep ploughing",Thiram / Carboxin,3 g/kg seed,Rabi
+Wheat,Jharkhand,HealthyLeaf,—,No visible symptoms (healthy leaf sample),—,—,—,All
+Wheat,Jharkhand,LeafBlight,Alternaria triticina,Brown necrotic patches on leaves,"Balanced fertilizer, avoid moisture stress",Mancozeb 75% WP,2 g/L,Rabi
+Wheat,Jharkhand,WheatBlast,Magnaporthe oryzae pathotype Triticum,"Grey lesions, spike bleaching, shriveled grains","Burn infected residues, avoid late sowing",Tebuconazole / Tricyclazole,1 ml/L,Rabi
+Rice,Jharkhand,Bacterialblight,Xanthomonas oryzae pv. oryzae,Yellowing/drying from leaf tip downward,"Drain excess water, use resistant varieties",Copper oxychloride,2.5 g/L,Kharif
+Rice,Jharkhand,Brownspot,Bipolaris oryzae,Brown circular lesions on leaves,"Balanced NPK, seed treatment",Mancozeb / Propiconazole,2 g/L,Kharif
+Rice,Jharkhand,Leafsmut,Entyloma oryzae,Black linear sori on leaves,"Remove infected debris, avoid dense planting",Carbendazim 50% WP,1 g/L,Kharif
+Wheat,Chhattisgarh,BlackPoint,Cochliobolus sativus,Black discoloration at embryo end of grains,"Use clean seed, proper drying, avoid late irrigation",Carbendazim 50% WP,2 g/kg seed,Rabi
+Wheat,Chhattisgarh,FusariumFootRot,Fusarium spp.,"Brown foot rot, stunted plant growth","Crop rotation, deep ploughing",Thiram / Carboxin,3 g/kg seed,Rabi
+Wheat,Chhattisgarh,HealthyLeaf,—,No visible symptoms (healthy leaf sample),—,—,—,All
+Wheat,Chhattisgarh,LeafBlight,Alternaria triticina,Brown necrotic patches on leaves,"Balanced fertilizer, avoid moisture stress",Mancozeb 75% WP,2 g/L,Rabi
+Wheat,Chhattisgarh,WheatBlast,Magnaporthe oryzae pathotype Triticum,"Grey lesions, spike bleaching, shriveled grains","Burn infected residues, avoid late sowing",Tebuconazole / Tricyclazole,1 ml/L,Rabi
+Rice,Chhattisgarh,Bacterialblight,Xanthomonas oryzae pv. oryzae,Yellowing/drying from leaf tip downward,"Drain excess water, use resistant varieties",Copper oxychloride,2.5 g/L,Kharif
+Rice,Chhattisgarh,Brownspot,Bipolaris oryzae,Brown circular lesions on leaves,"Balanced NPK, seed treatment",Mancozeb / Propiconazole,2 g/L,Kharif
+Rice,Chhattisgarh,Leafsmut,Entyloma oryzae,Black linear sori on leaves,"Remove infected debris, avoid dense planting",Carbendazim 50% WP,1 g/L,Kharif
+Wheat,Tamil Nadu,BlackPoint,Cochliobolus sativus,Black discoloration at embryo end of grains,"Use clean seed, proper drying, avoid late irrigation",Carbendazim 50% WP,2 g/kg seed,Rabi
+Wheat,Tamil Nadu,FusariumFootRot,Fusarium spp.,"Brown foot rot, stunted plant growth","Crop rotation, deep ploughing",Thiram / Carboxin,3 g/kg seed,Rabi
+Wheat,Tamil Nadu,HealthyLeaf,—,No visible symptoms (healthy leaf sample),—,—,—,All
+Wheat,Tamil Nadu,LeafBlight,Alternaria triticina,Brown necrotic patches on leaves,"Balanced fertilizer, avoid moisture stress",Mancozeb 75% WP,2 g/L,Rabi
+Wheat,Tamil Nadu,WheatBlast,Magnaporthe oryzae pathotype Triticum,"Grey lesions, spike bleaching, shriveled grains","Burn infected residues, avoid late sowing",Tebuconazole / Tricyclazole,1 ml/L,Rabi
+Rice,Tamil Nadu,Bacterialblight,Xanthomonas oryzae pv. oryzae,Yellowing/drying from leaf tip downward,"Drain excess water, use resistant varieties",Copper oxychloride,2.5 g/L,Kharif
+Rice,Tamil Nadu,Brownspot,Bipolaris oryzae,Brown circular lesions on leaves,"Balanced NPK, seed treatment",Mancozeb / Propiconazole,2 g/L,Kharif
+Rice,Tamil Nadu,Leafsmut,Entyloma oryzae,Black linear sori on leaves,"Remove infected debris, avoid dense planting",Carbendazim 50% WP,1 g/L,Kharif
+Wheat,Karnataka,BlackPoint,Cochliobolus sativus,Black discoloration at embryo end of grains,"Use clean seed, proper drying, avoid late irrigation",Carbendazim 50% WP,2 g/kg seed,Rabi
+Wheat,Karnataka,FusariumFootRot,Fusarium spp.,"Brown foot rot, stunted plant growth","Crop rotation, deep ploughing",Thiram / Carboxin,3 g/kg seed,Rabi
+Wheat,Karnataka,HealthyLeaf,—,No visible symptoms (healthy leaf sample),—,—,—,All
+Wheat,Karnataka,LeafBlight,Alternaria triticina,Brown necrotic patches on leaves,"Balanced fertilizer, avoid moisture stress",Mancozeb 75% WP,2 g/L,Rabi
+Wheat,Karnataka,WheatBlast,Magnaporthe oryzae pathotype Triticum,"Grey lesions, spike bleaching, shriveled grains","Burn infected residues, avoid late sowing",Tebuconazole / Tricyclazole,1 ml/L,Rabi
+Rice,Karnataka,Bacterialblight,Xanthomonas oryzae pv. oryzae,Yellowing/drying from leaf tip downward,"Drain excess water, use resistant varieties",Copper oxychloride,2.5 g/L,Kharif
+Rice,Karnataka,Brownspot,Bipolaris oryzae,Brown circular lesions on leaves,"Balanced NPK, seed treatment",Mancozeb / Propiconazole,2 g/L,Kharif
+Rice,Karnataka,Leafsmut,Entyloma oryzae,Black linear sori on leaves,"Remove infected debris, avoid dense planting",Carbendazim 50% WP,1 g/L,Kharif
+Wheat,Andhra Pradesh,BlackPoint,Cochliobolus sativus,Black discoloration at embryo end of grains,"Use clean seed, proper drying, avoid late irrigation",Carbendazim 50% WP,2 g/kg seed,Rabi
+Wheat,Andhra Pradesh,FusariumFootRot,Fusarium spp.,"Brown foot rot, stunted plant growth","Crop rotation, deep ploughing",Thiram / Carboxin,3 g/kg seed,Rabi
+Wheat,Andhra Pradesh,HealthyLeaf,—,No visible symptoms (healthy leaf sample),—,—,—,All
+Wheat,Andhra Pradesh,LeafBlight,Alternaria triticina,Brown necrotic patches on leaves,"Balanced fertilizer, avoid moisture stress",Mancozeb 75% WP,2 g/L,Rabi
+Wheat,Andhra Pradesh,WheatBlast,Magnaporthe oryzae pathotype Triticum,"Grey lesions, spike bleaching, shriveled grains","Burn infected residues, avoid late sowing",Tebuconazole / Tricyclazole,1 ml/L,Rabi
+Rice,Andhra Pradesh,Bacterialblight,Xanthomonas oryzae pv. oryzae,Yellowing/drying from leaf tip downward,"Drain excess water, use resistant varieties",Copper oxychloride,2.5 g/L,Kharif
+Rice,Andhra Pradesh,Brownspot,Bipolaris oryzae,Brown circular lesions on leaves,"Balanced NPK, seed treatment",Mancozeb / Propiconazole,2 g/L,Kharif
+Rice,Andhra Pradesh,Leafsmut,Entyloma oryzae,Black linear sori on leaves,"Remove infected debris, avoid dense planting",Carbendazim 50% WP,1 g/L,Kharif
+Wheat,Telangana,BlackPoint,Cochliobolus sativus,Black discoloration at embryo end of grains,"Use clean seed, proper drying, avoid late irrigation",Carbendazim 50% WP,2 g/kg seed,Rabi
+Wheat,Telangana,FusariumFootRot,Fusarium spp.,"Brown foot rot, stunted plant growth","Crop rotation, deep ploughing",Thiram / Carboxin,3 g/kg seed,Rabi
+Wheat,Telangana,HealthyLeaf,—,No visible symptoms (healthy leaf sample),—,—,—,All
+Wheat,Telangana,LeafBlight,Alternaria triticina,Brown necrotic patches on leaves,"Balanced fertilizer, avoid moisture stress",Mancozeb 75% WP,2 g/L,Rabi
+Wheat,Telangana,WheatBlast,Magnaporthe oryzae pathotype Triticum,"Grey lesions, spike bleaching, shriveled grains","Burn infected residues, avoid late sowing",Tebuconazole / Tricyclazole,1 ml/L,Rabi
+Rice,Telangana,Bacterialblight,Xanthomonas oryzae pv. oryzae,Yellowing/drying from leaf tip downward,"Drain excess water, use resistant varieties",Copper oxychloride,2.5 g/L,Kharif
+Rice,Telangana,Brownspot,Bipolaris oryzae,Brown circular lesions on leaves,"Balanced NPK, seed treatment",Mancozeb / Propiconazole,2 g/L,Kharif
+Rice,Telangana,Leafsmut,Entyloma oryzae,Black linear sori on leaves,"Remove infected debris, avoid dense planting",Carbendazim 50% WP,1 g/L,Kharif
+Wheat,Kerala,BlackPoint,Cochliobolus sativus,Black discoloration at embryo end of grains,"Use clean seed, proper drying, avoid late irrigation",Carbendazim 50% WP,2 g/kg seed,Rabi
+Wheat,Kerala,FusariumFootRot,Fusarium spp.,"Brown foot rot, stunted plant growth","Crop rotation, deep ploughing",Thiram / Carboxin,3 g/kg seed,Rabi
+Wheat,Kerala,HealthyLeaf,—,No visible symptoms (healthy leaf sample),—,—,—,All
+Wheat,Kerala,LeafBlight,Alternaria triticina,Brown necrotic patches on leaves,"Balanced fertilizer, avoid moisture stress",Mancozeb 75% WP,2 g/L,Rabi
+Wheat,Kerala,WheatBlast,Magnaporthe oryzae pathotype Triticum,"Grey lesions, spike bleaching, shriveled grains","Burn infected residues, avoid late sowing",Tebuconazole / Tricyclazole,1 ml/L,Rabi
+Rice,Kerala,Bacterialblight,Xanthomonas oryzae pv. oryzae,Yellowing/drying from leaf tip downward,"Drain excess water, use resistant varieties",Copper oxychloride,2.5 g/L,Kharif
+Rice,Kerala,Brownspot,Bipolaris oryzae,Brown circular lesions on leaves,"Balanced NPK, seed treatment",Mancozeb / Propiconazole,2 g/L,Kharif
+Rice,Kerala,Leafsmut,Entyloma oryzae,Black linear sori on leaves,"Remove infected debris, avoid dense planting",Carbendazim 50% WP,1 g/L,Kharif
+Wheat,Himachal Pradesh,BlackPoint,Cochliobolus sativus,Black discoloration at embryo end of grains,"Use clean seed, proper drying, avoid late irrigation",Carbendazim 50% WP,2 g/kg seed,Rabi
+Wheat,Himachal Pradesh,FusariumFootRot,Fusarium spp.,"Brown foot rot, stunted plant growth","Crop rotation, deep ploughing",Thiram / Carboxin,3 g/kg seed,Rabi
+Wheat,Himachal Pradesh,HealthyLeaf,—,No visible symptoms (healthy leaf sample),—,—,—,All
+Wheat,Himachal Pradesh,LeafBlight,Alternaria triticina,Brown necrotic patches on leaves,"Balanced fertilizer, avoid moisture stress",Mancozeb 75% WP,2 g/L,Rabi
+Wheat,Himachal Pradesh,WheatBlast,Magnaporthe oryzae pathotype Triticum,"Grey lesions, spike bleaching, shriveled grains","Burn infected residues, avoid late sowing",Tebuconazole / Tricyclazole,1 ml/L,Rabi
+Rice,Himachal Pradesh,Bacterialblight,Xanthomonas oryzae pv. oryzae,Yellowing/drying from leaf tip downward,"Drain excess water, use resistant varieties",Copper oxychloride,2.5 g/L,Kharif
+Rice,Himachal Pradesh,Brownspot,Bipolaris oryzae,Brown circular lesions on leaves,"Balanced NPK, seed treatment",Mancozeb / Propiconazole,2 g/L,Kharif
+Rice,Himachal Pradesh,Leafsmut,Entyloma oryzae,Black linear sori on leaves,"Remove infected debris, avoid dense planting",Carbendazim 50% WP,1 g/L,Kharif
+Wheat,Uttarakhand,BlackPoint,Cochliobolus sativus,Black discoloration at embryo end of grains,"Use clean seed, proper drying, avoid late irrigation",Carbendazim 50% WP,2 g/kg seed,Rabi
+Wheat,Uttarakhand,FusariumFootRot,Fusarium spp.,"Brown foot rot, stunted plant growth","Crop rotation, deep ploughing",Thiram / Carboxin,3 g/kg seed,Rabi
+Wheat,Uttarakhand,HealthyLeaf,—,No visible symptoms (healthy leaf sample),—,—,—,All
+Wheat,Uttarakhand,LeafBlight,Alternaria triticina,Brown necrotic patches on leaves,"Balanced fertilizer, avoid moisture stress",Mancozeb 75% WP,2 g/L,Rabi
+Wheat,Uttarakhand,WheatBlast,Magnaporthe oryzae pathotype Triticum,"Grey lesions, spike bleaching, shriveled grains","Burn infected residues, avoid late sowing",Tebuconazole / Tricyclazole,1 ml/L,Rabi
+Rice,Uttarakhand,Bacterialblight,Xanthomonas oryzae pv. oryzae,Yellowing/drying from leaf tip downward,"Drain excess water, use resistant varieties",Copper oxychloride,2.5 g/L,Kharif
+Rice,Uttarakhand,Brownspot,Bipolaris oryzae,Brown circular lesions on leaves,"Balanced NPK, seed treatment",Mancozeb / Propiconazole,2 g/L,Kharif
+Rice,Uttarakhand,Leafsmut,Entyloma oryzae,Black linear sori on leaves,"Remove infected debris, avoid dense planting",Carbendazim 50% WP,1 g/L,Kharif
+Wheat,Jammu & Kashmir,BlackPoint,Cochliobolus sativus,Black discoloration at embryo end of grains,"Use clean seed, proper drying, avoid late irrigation",Carbendazim 50% WP,2 g/kg seed,Rabi
+Wheat,Jammu & Kashmir,FusariumFootRot,Fusarium spp.,"Brown foot rot, stunted plant growth","Crop rotation, deep ploughing",Thiram / Carboxin,3 g/kg seed,Rabi
+Wheat,Jammu & Kashmir,HealthyLeaf,—,No visible symptoms (healthy leaf sample),—,—,—,All
+Wheat,Jammu & Kashmir,LeafBlight,Alternaria triticina,Brown necrotic patches on leaves,"Balanced fertilizer, avoid moisture stress",Mancozeb 75% WP,2 g/L,Rabi
+Wheat,Jammu & Kashmir,WheatBlast,Magnaporthe oryzae pathotype Triticum,"Grey lesions, spike bleaching, shriveled grains","Burn infected residues, avoid late sowing",Tebuconazole / Tricyclazole,1 ml/L,Rabi
+Rice,Jammu & Kashmir,Bacterialblight,Xanthomonas oryzae pv. oryzae,Yellowing/drying from leaf tip downward,"Drain excess water, use resistant varieties",Copper oxychloride,2.5 g/L,Kharif
+Rice,Jammu & Kashmir,Brownspot,Bipolaris oryzae,Brown circular lesions on leaves,"Balanced NPK, seed treatment",Mancozeb / Propiconazole,2 g/L,Kharif
+Rice,Jammu & Kashmir,Leafsmut,Entyloma oryzae,Black linear sori on leaves,"Remove infected debris, avoid dense planting",Carbendazim 50% WP,1 g/L,Kharif

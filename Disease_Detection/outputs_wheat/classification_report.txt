@@ -1,0 +1,11 @@
+                 precision    recall  f1-score   support
+
+     BlackPoint     0.9840    0.9762    0.9801       126
+FusariumFootRot     0.9931    1.0000    0.9965       143
+    HealthyLeaf     0.9852    0.9708    0.9779       137
+     LeafBlight     1.0000    1.0000    1.0000       110
+     WheatBlast     0.9882    1.0000    0.9941       168
+
+       accuracy                         0.9898       684
+      macro avg     0.9901    0.9894    0.9897       684
+   weighted avg     0.9897    0.9898    0.9897       684
