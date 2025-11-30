@@ -23,6 +23,7 @@ from fastapi import FastAPI, UploadFile, File, HTTPException, Query
 from fastapi.responses import HTMLResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+import cv2  # for auto leaf crop and Grad-CAM overlay
 
 from cure_db import cure_db  # uses india_statewise_rice_wheat_focused_diseases.csv
 
@@ -68,7 +69,7 @@ DEBUG_SAVE = False
 # ============================================================
 app = FastAPI(
     title="AgroAI – Disease + Cure (Rice/Wheat) with Live Camera",
-    version="3.0",
+    version="3.1",
 )
 
 app.add_middleware(
@@ -128,18 +129,82 @@ def get_model_and_labels(crop: str):
 
 
 # ============================================================
-# UTILS
+# UTILS – AUTO LEAF CROP + PREPROCESS
 # ============================================================
+def auto_leaf_crop(img_bytes: bytes) -> bytes:
+    """
+    Try to detect the main green leaf region and crop around it.
+    If detection fails, return original bytes.
+    """
+    np_img = np.frombuffer(img_bytes, np.uint8)
+    img = cv2.imdecode(np_img, cv2.IMREAD_COLOR)
+    if img is None:
+        return img_bytes
+
+    h, w, _ = img.shape
+    if h == 0 or w == 0:
+        return img_bytes
+
+    # Convert to HSV to isolate green
+    hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+
+    # Green range (rough vegetation range; tweak if needed)
+    lower_green = np.array([25, 40, 40], dtype=np.uint8)
+    upper_green = np.array([95, 255, 255], dtype=np.uint8)
+
+    mask = cv2.inRange(hsv, lower_green, upper_green)
+
+    # Morphological ops to connect leaf regions
+    kernel = np.ones((5, 5), np.uint8)
+    mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel, iterations=2)
+    mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel, iterations=1)
+
+    contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    if not contours:
+        # No obvious green region – fallback
+        return img_bytes
+
+    # Take largest contour as main leaf
+    c = max(contours, key=cv2.contourArea)
+    x, y, w_box, h_box = cv2.boundingRect(c)
+
+    # If leaf region is too tiny relative to frame, cropping may be nonsense → fallback
+    if w_box * h_box < 0.05 * (w * h):
+        return img_bytes
+
+    # Add padding around the leaf box
+    pad = int(0.12 * max(w_box, h_box))
+    x0 = max(x - pad, 0)
+    y0 = max(y - pad, 0)
+    x1 = min(x + w_box + pad, w)
+    y1 = min(y + h_box + pad, h)
+
+    cropped = img[y0:y1, x0:x1]
+    if cropped.size == 0:
+        return img_bytes
+
+    # Re-encode to bytes
+    ok, buf = cv2.imencode(".jpg", cropped)
+    if not ok:
+        return img_bytes
+
+    return buf.tobytes()
+
+
 def preprocess(img_bytes: bytes):
     """
-    Decode image, center-crop to square, then resize to IMG_SIZE.
-    This makes live camera input closer to training distribution.
+    1. Auto-crop likely leaf region using color segmentation.
+    2. Center-crop to square.
+    3. Resize to IMG_SIZE and normalize.
     """
-    # Decode
+    # First, try to crop around the leaf region
+    img_bytes = auto_leaf_crop(img_bytes)
+
+    # Decode with TF
     img = tf.io.decode_image(img_bytes, channels=3)
     img.set_shape([None, None, 3])  # ensure rank known
 
-    # Center-crop to square (important for webcam frames)
+    # Center-crop to square
     shape = tf.shape(img)
     h = shape[0]
     w = shape[1]
@@ -186,8 +251,6 @@ def gradcam_heatmap(model, img_tensor, class_index: int):
 
 
 def overlay_heatmap(img_bytes: bytes, heatmap: np.ndarray):
-    import cv2
-
     np_img = np.frombuffer(img_bytes, np.uint8)
     img = cv2.imdecode(np_img, cv2.IMREAD_COLOR)
 
